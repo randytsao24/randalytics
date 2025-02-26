@@ -15,7 +15,9 @@ interface ClickEvent extends AnalyticsEvent {
   text?: string;
 }
 
-type EventHandler = (event: AnalyticsEvent) => void | Promise<void>;
+export type RandalyticsEvent = AnalyticsEvent | PageViewEvent | ClickEvent;
+
+type EventHandler = (event: RandalyticsEvent) => void | Promise<void>;
 
 export class Randalytics {
   private static instance: Randalytics;
